@@ -61,7 +61,8 @@ if st.button("Run Classifier"):
     if not st.session_state.ticker or not st.session_state.fundamentals:
         st.warning("Please show fundamentals first before running the classifier.")
     else:
-        df = pd.read_csv("stocks_enhanced.csv")
+        url = "https://raw.githubusercontent.com/IamAnthonycruz/fundamental-stock-analyzer/refs/heads/main/src/stocks_enhanced.csv"
+        df = pd.read_csv(url)
         features = df.iloc[:, 1:4].values
         target = df.iloc[:, 6].values
 
